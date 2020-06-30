@@ -40,9 +40,7 @@ not enough arguments in call to s.statsd.SendLoop
 ``s.statsd.SendLoop(context.Background(), s.sendTicker.C, network, address)``
 然后完成并通过编译，可以直接下载修我改好的代码[https://github.com/renyinew/education.git](https://github.com/renyinew/education.git)
   
-##### 配置crypto-config.yaml
-
-##### 配置configtx.yaml   
+##### 笔者增加了配置crypto-config.yaml configtx.yaml文件用于后期版本升级
 
 ### 生成证书与节点
 >* $cryptogen generate --config=./crypto-config.yaml
@@ -50,11 +48,9 @@ not enough arguments in call to s.statsd.SendLoop
 >* $configtxgen -profile OneOrgChannel -outputCreateChannelTx ./artifacts/channel.tx -channelID kevinkongyixueyuan
 >* $configtxgen -profile OneOrgChannel -outputAnchorPeersUpdate ./artifacts/Org1MSPanchors.tx -channelID kevinkongyixueyuan -asOrg KongyixueyuanOrg
 
-或者执行一键脚本
->* $ ./gen.sh
-
-### 修改docker-compose.yml
->* fabric-ca-server-config配置证书为新生成的证书文件
+###或者执行一键脚本
+>*  修改cryptoArtifacts.sh文件PATH变量指向自己的bin文件
+>* $ ./cryptoArtifacts.sh
 
 ### 启动并测试
 >* cd fixtures && docker-compose up --force-recreate
