@@ -2,7 +2,7 @@
 layout: post
 title: "fabric-sdk-go支持fabric 1.4.8链码测试"
 date: 2020-06-24   
-tag: fabric 1.4.8 fabric-sdk-go
+tag: Fabric
 ---
 
 ### 介绍       
